@@ -58,7 +58,8 @@ $profile = mysqli_fetch_object($select_id);
                             </label>
                             <!-- value $profile->nama untuk menampilkan data yg diklik dari
                             table profile di database -->
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $profile->nama ?>">
+                            <input type="text" class="form-control" id="nama" name="nama" 
+                            value="<?php echo $profile->nama ?>">
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label"> Overview
@@ -74,7 +75,8 @@ $profile = mysqli_fetch_object($select_id);
                         <div class="mb-3">
                             <label for="phone" class="form-label"> Phone
                             </label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $profile->phone ?>" >
+                            <input type="text" class="form-control" id="phone" name="phone"
+                            value="<?php echo $profile->phone ?>" >
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label"> Email Address
@@ -90,12 +92,14 @@ $profile = mysqli_fetch_object($select_id);
                         <div class="mb-3">
                             <label for="linkedin" class="form-label"> Linkedin
                             </label>
-                            <input type="linkedin" class="form-control" id="linkedin" name="linkedin" value="<?php echo $profile->linkedin?>">
+                            <input type="linkedin" class="form-control" id="linkedin" name="linkedin" 
+                            value="<?php echo $profile->linkedin?>">
                         </div>
                         <div class="mb-3">
                             <label for="nationality" class="form-label"> Nationality
                             </label>
-                            <input type="text" class="form-control" id="nationality" name="nationality" value="<?php echo $profile->nationality ?>">
+                            <input type="text" class="form-control" id="nationality" name="nationality" 
+                            value="<?php echo $profile->nationality ?>">
                         </div>
 
                         <!-- step 2: update form profile mksdnya adlh menambahkan inputan id_profile dg type
