@@ -69,9 +69,14 @@ $select_portfolio = mysqli_query($koneksi, "SELECT * FROM portfolio ORDER BY id_
                         $tampil->judul_portfolio; ?></th>
 
                         <td>
-                            <img src="foto/<?php echo $tampil->img; ?>" alt="" width="300">
-                        <td>
-                        <td><?php echo $tampil->link; ?></td>
+                            <!-- Menampilkan gambar bendera berdasarkan nama file yang diambil dari database -->
+                            <img src="foto/<?php echo $tampil->img; ?>" alt="" width="200">
+                        </td>
+                         <td>
+                           <a href="<?php echo $tampil->link; ?>" target="_blank">
+                            <?php echo $tampil->link; ?>
+                           </a>
+                        </td>
                         <td><?php echo $tampil->deskripsi; ?></td>
                         <td><?php echo $tampil->jenis; ?></td>
 

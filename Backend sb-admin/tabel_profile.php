@@ -36,7 +36,7 @@ $select_profile = mysqli_query($koneksi, "SELECT*FROM profile");
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                     </div>
 <!-- keempat, tambahkan tombol Tambah utk mengerahkan ke file form_profile.php -->
- <a href ="form_profile.php" class="btn btn-info mb-2">ADD</a>
+ <!-- <a href ="form_profile.php" class="btn btn-info mb-2">ADD</a> -->
                     <!-- content start -->
 
              <table class="table table-striped">
@@ -48,7 +48,7 @@ $select_profile = mysqli_query($koneksi, "SELECT*FROM profile");
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>    
                         <th scope="col">Address</th>
-                        <th scope="col">linkedin</th>
+                        <th scope="col">Find Me</th>
                         <th scope="col">Nationality</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -64,11 +64,22 @@ $select_profile = mysqli_query($koneksi, "SELECT*FROM profile");
                         <th scope="row"><?php echo 
                         $tampil->nama; ?></th>
                         <td><?php echo $tampil->about; ?></td>
-                        <td><?php echo $tampil->website; ?></td>
+                        <td>
+                           <a href="<?php echo $tampil->website; ?>" target="_blank">
+                            <?php echo $tampil->website; ?>
+                           </a>
+                        </td>
                         <td><?php echo $tampil->phone; ?></td>
                         <td><?php echo $tampil->email; ?></td>
                         <td><?php echo $tampil->address; ?></td>
-                        <td><?php echo $tampil->linkedin; ?></td>
+
+                        <!-- buat nampilin sosmed kita--> 
+                       <td>
+                           <a href="<?php echo $tampil->find_me; ?>" target="_blank">
+                            <?php echo $tampil->find_me; ?>
+                           </a>
+                        </td>
+
                         <td><?php echo $tampil->nationality; ?></td>
                         <td>
                             <!-- step two: -->
@@ -80,9 +91,6 @@ $select_profile = mysqli_query($koneksi, "SELECT*FROM profile");
                             utk konfirmasi hapus ketika click tombol DELETE --> 
                             <!-- step four: create delete_profile.php --> 
                             <!-- step five: let's go to file delete_profile.php --> 
-                            <a href="delete_profile.php?id_profile=<?php echo 
-                            $tampil->id_profile;?>" class="btn btn-danger"
-                            onclick="return confirm ('Confirm to delete?')">DELETE</a>
 
                             <!-- dari sini kita kemudian bikin file update_form_profile.php -->
                             <!-- di file tsb, kita copy data file form_profile dan di paste di

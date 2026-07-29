@@ -1,7 +1,7 @@
 <?php
 include "connection.php";
 // kedua buat perintah sql/query ke database utk menampilkan data
-$select_sidebar_photo = mysqli_query($koneksi, "SELECT * FROM sidebar_photo");
+$select_sidebar_photo = mysqli_query($koneksi, "SELECT * FROM sidebar_photo ORDER BY id_sidebar_photo DESC");
 // ketiga buat perulangan di dalam <tbody> di bawah ini
 
 ?>
@@ -58,7 +58,7 @@ $select_sidebar_photo = mysqli_query($koneksi, "SELECT * FROM sidebar_photo");
                     <tr> 
 
                         <td>
-                            <img src="foto/<?php echo $tampil->sidebar_photo; ?>" alt="" width="100">
+                            <img src="foto/<?php echo $tampil->sidebar_photo; ?>" alt="" width="150">
                         </td>
                         <td>
                             <!-- step two: -->

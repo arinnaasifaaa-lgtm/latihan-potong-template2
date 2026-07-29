@@ -40,11 +40,11 @@ $select_mobile = mysqli_query($koneksi, "SELECT*FROM mobile");
 <!-- keempat, tambahkan tombol Tambah utk mengerahkan ke file form_profile.php -->
  <a href ="form_mobile.php" class="btn btn-info mb-2">ADD</a>
                     <!-- content start -->
-
+             <!-- Membuat tabel untuk menampilkan data language -->
              <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Name</th>
+                        <th scope="col">Nama</th>
                         <th scope="col">Icon</th>
                     
                         <th scope="col">Action</th>
@@ -62,6 +62,7 @@ $select_mobile = mysqli_query($koneksi, "SELECT*FROM mobile");
                         $tampil->nama; ?></th>
 
                         <td>
+                            <!-- Menampilkan icon sesuai data yang ada di database -->
                           <i style="color:grey;font-size:50px;" class="<?php echo $tampil->icon; ?>">
 
                           </i>

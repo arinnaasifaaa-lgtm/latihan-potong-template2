@@ -42,10 +42,11 @@ $select_language = mysqli_query($koneksi, "SELECT * FROM language");
 <!-- keempat, tambahkan tombol Tambah utk mengerahkan ke file form_language.php -->
  <a href ="form_language.php" class="btn btn-info mb-2">ADD</a>
                     <!-- content start -->
-
+             <!-- Membuat tabel untuk menampilkan data language -->
              <table class="table table-striped">
                 <thead>
                     <tr>
+                         <!-- Kolom untuk menampilkan nama bahasa -->
                         <th scope="col">Language</th>
                         <th scope="col">Flag</th>
                         <th scope="col">Action</th>
@@ -56,12 +57,16 @@ $select_language = mysqli_query($koneksi, "SELECT * FROM language");
                     <?php
                     // mysqli_fetch_object menggunakan <?php $tampil->nama;
                     // mysqli_fetch_array menggunakan <?php $tampil['nama']
+                    // Melakukan perulangan untuk menampilkan setiap data language dari database
                     while($tampil =mysqli_fetch_object ($select_language)):
                     ?>   
                     <tr> 
+                        <!-- Menampilkan data bahasa dari database pada kolom pertama tabel -->
                         <th scope="row"><?php echo 
                         $tampil->bahasa; ?></th>
+
                         <td>
+                            <!-- Menampilkan gambar bendera berdasarkan nama file yang diambil dari database -->
                             <img src="fotobende/<?php echo $tampil->flag; ?>" alt="" width="100">
                         </td>
                         <td>

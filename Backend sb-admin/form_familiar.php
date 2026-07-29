@@ -41,6 +41,9 @@ form_reference.php, dengan cara berulang yang sama-->
 
                     <!-- content start -->
 
+                      <!-- form action adalah tujuan pengiriman data dari sebuah form. ketika pengguna
+                    mengisi form lalu menekan tombol Submit, browser akan mengirim semua
+                    data ke file yang ditulis di dalam atribut action. -->
                      <form action="action_insert_familiar.php" method="post">
                         <div class="mb-3">
                             <label for="nama" class="form-label"> Name
@@ -54,6 +57,7 @@ form_reference.php, dengan cara berulang yang sama-->
                         </div>
                         
                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-secondary ms-2">Reset</button>
                      </form>
                     <!-- content end -->
 

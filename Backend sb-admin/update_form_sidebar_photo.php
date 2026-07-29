@@ -52,6 +52,8 @@ $id_sidebar_photo = mysqli_fetch_object($select_id);
                             value="<?php echo $id_sidebar_photo->sidebar_photo; ?>">
                         </div>
                        
+                        <!-- Menyimpan ID familiar agar ikut terkirim saat tombol Update diklik -->
+                        <!-- type="hidden" Membuat input yang tidak terlihat oleh pengguna-->
                         <input type="hidden" name="id_sidebar_photo"
                         value="<?php echo $id_sidebar_photo->id_sidebar_photo; ?>">
 

@@ -62,7 +62,9 @@ form_reference.php, dengan cara berulang yang sama-->
                             <input type="text" class="form-control" id="nama" name="icon" value="<?php echo $familiar->icon ?>">
                         </div>
                         
+                        <!-- Menyimpan ID familiar agar ikut terkirim saat tombol Update diklik -->
                         <input type="hidden" value="<?php echo $familiar->id_familiar ?>" name="id_familiar">
+                        <!-- type="hidden" Membuat input yang tidak terlihat oleh pengguna--> 
                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                      </form>
                     <!-- content end -->

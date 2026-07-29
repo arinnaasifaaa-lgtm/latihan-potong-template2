@@ -1,13 +1,17 @@
 <?php
+// Memanggil file connection.php untuk menghubungkan PHP dengan database
 include "connection.php";
 
 $id_sidebar_photo = $_GET['id_sidebar_photo'];
 
+// Mengambil data sidebar photo sesuai ID yang dikirim
 $imgsidebar_photo = mysqli_query($koneksi, "SELECT * FROM sidebar_photo WHERE
 id_sidebar_photo IN ('$id_sidebar_photo')");
 
 // tampilkan foto
+// Mengambil hasil query dan menyimpannya ke dalam variabel $vimg
 $vimg= mysqli_fetch_object($imgsidebar_photo);
+// Folder tujuan untuk menyimpan file yang akan diupload
 $path = "foto/";
 
 // is_file gunanya untuk mengecek apakah file ada atau tidak. jika ada maka akan dihapus\

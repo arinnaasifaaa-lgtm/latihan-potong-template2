@@ -45,13 +45,15 @@ $profile = mysqli_fetch_object($select_id);
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Update/h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update</h1>
                        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                     </div>
 
                     <!-- content start -->
-
+                     <!-- form action adalah tujuan pengiriman data dari sebuah form. ketika pengguna
+                    mengisi form lalu menekan tombol Submit, browser akan mengirim semua
+                    data ke file yang ditulis di dalam atribut action. -->
                      <form action="action_update_profile.php" method="post">
                         <div class="mb-3">
                             <label for="nama" class="form-label"> Name
@@ -70,6 +72,7 @@ $profile = mysqli_fetch_object($select_id);
                         <div class="mb-3">
                             <label for="website" class="form-label"> Website
                             </label>
+                            <!-- Menampilkan data website yang sudah ada ke dalam kolom input -->
                             <input type="text" class="form-control" id="website" name="website" value="<?php echo $profile->website ?>">
                         </div>
                         <div class="mb-3">
@@ -90,10 +93,10 @@ $profile = mysqli_fetch_object($select_id);
                             <textarea name="address" id="address" cols="20" class="form-control" rows="5"><?php echo $profile->address ?>"</textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="linkedin" class="form-label"> Linkedin
+                            <label for="find_me" class="form-label"> Find Me
                             </label>
-                            <input type="linkedin" class="form-control" id="linkedin" name="linkedin" 
-                            value="<?php echo $profile->linkedin?>">
+                            <input type="find_me" class="form-control" id="find_me" name="find_me" 
+                            value="<?php echo $profile->find_me?>">
                         </div>
                         <div class="mb-3">
                             <label for="nationality" class="form-label"> Nationality
@@ -105,6 +108,8 @@ $profile = mysqli_fetch_object($select_id);
                         <!-- step 2: update form profile mksdnya adlh menambahkan inputan id_profile dg type
                         HIDDEN utk mengirimkan id_profile mana yg mau di update -->
                         <!-- di bawah ini adalah caranya --> 
+                        <!-- Menyimpan ID familiar agar ikut terkirim saat tombol Update diklik -->
+                        <!-- type="hidden" Membuat input yang tidak terlihat oleh pengguna-->
                         <input type="hidden" value="<?php echo $profile->id_profile ?>" name="id_profile">
                         
                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>

@@ -8,6 +8,7 @@ id_portfolio IN ('$id_portfolio')");
 
 // tampilkan foto
 $vimg= mysqli_fetch_object($imgsportfolio);
+// Folder tujuan untuk menyimpan file yang akan diupload
 $path = "foto/";
 
 // is_file gunanya untuk mengecek apakah file ada atau tidak. jika ada maka akan dihapus\

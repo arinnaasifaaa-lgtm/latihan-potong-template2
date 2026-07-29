@@ -16,7 +16,9 @@ $path = "fotobende/";
 // untuk mengupload foto digunakan fungsi move_uploaded_file() 
 move_uploaded_file($_FILES['flag']['tmp_name'], $path . $vflagimage);
 
+// Menyimpan data bahasa dan nama file gambar ke tabel language
 $sql_insert = mysqli_query($koneksi, "INSERT INTO language (bahasa, flag)
 VALUES ('$Vlanguage', '$vflagimage')");
 
+// header location utk menhgarahkan halaman ke tabel_education.php
 header("Location:tabel_language.php");

@@ -1,4 +1,5 @@
 <?php
+// Memanggil file connection.php untuk menghubungkan PHP dengan database
 include "connection.php";
 
 // unruk menerima id_profile yg dibawa dari tombol DELETE dari TABEL PROFILE menggunakan $id_profile

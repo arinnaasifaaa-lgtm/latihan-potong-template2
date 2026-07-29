@@ -4,7 +4,7 @@ include "connection.php";
 $id_sidebar_photo = $_POST['id_sidebar_photo'];
 
 $namaimage = time() .".jpg";
-
+// Folder tujuan untuk menyimpan file yang akan diupload
 $path= "foto/";
 
 // UPDATE  tanpa foto. yg mau di update adlh keterangan saja selain foto. maka kita buat kondisi IF ELSE

@@ -43,13 +43,17 @@ form_reference.php, dengan cara berulang yang sama-->
 
                      <form action="action_insert_sidebar_photo.php" method="post"
                      enctype="multipart/form-data">
+                     <!-- enctype="multipart/form-data"> digunakan agar form dapat mengirim file, seperti gambar, foto, 
+                     atau dokumen, ke server. Atribut ini wajib ditambahkan pada tag <form> jika di dalam form terdapat input bertipe file-->
                         <div class="mb-3">
                             <label for="sidebar_photo" class="form-label"> Sidebar Photo
                             </label>
+                            <!-- Input untuk memilih file gambar dari komputer -->
                             <input type="file" class="form-control" id="img" name="sidebar_photo">
                         </div>
                        
                        <button type="submit"  class="btn btn-primary">Submit</button>
+                       <button type="reset" class="btn btn-secondary ms-2">Reset</button>
                      </form>
                     <!-- content end -->
 

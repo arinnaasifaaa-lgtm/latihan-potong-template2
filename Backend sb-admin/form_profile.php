@@ -41,10 +41,16 @@ form_reference.php, dengan cara berulang yang sama-->
 
                     <!-- content start -->
 
+                    <!-- form action adalah tujuan pengiriman data dari sebuah form. ketika pengguna
+                    mengisi form lalu menekan tombol Submit, browser akan mengirim semua
+                    data ke file yang ditulis di dalam atribut action. -->
                      <form action="action_insert_profile.php" method="post">
                         <div class="mb-3">
                             <label for="nama" class="form-label"> Nama 
                             </label>
+                           <!-- label dan input untuk mengisi nama pengguna. Tag <label> digunakan untuk 
+                           memberikan keterangan pada kolom input, sehingga pengguna mengetahui data apa yang 
+                           harus diisi. Atribut for="nama" untuk menghubungkan label dengan input yang memiliki id="nama". -->
                             <input type="text" class="form-control" id="nama" name="nama">
                         </div>
                         <div class="mb-3">
@@ -74,9 +80,9 @@ form_reference.php, dengan cara berulang yang sama-->
                             <textarea name="address" id="address" cols="20" class="form-control" rows="5"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="linkedin" class="form-label"> Linkedin
+                            <label for="find_me" class="form-label"> Find Me
                             </label>
-                            <input type="linkedin" class="form-control" id="linkedin" name="linkedin">
+                            <input type="find_me" class="form-control" id="find_me" name="find_me">
                         </div>
                         <div class="mb-3">
                             <label for="nationality" class="form-label"> Nationality

@@ -66,7 +66,10 @@ form_reference.php, dengan cara berulang yang sama-->
                             <input type="file" class="form-control" id="flag" name="flag" value="<?= $language->flag ?>">
                         </div>
 
+                        <!-- Menyimpan ID familiar agar ikut terkirim saat tombol Update diklik -->
+
                         <input type="hidden" name="id_language" value="<?= $language->id_language ?>">
+                         <!-- type="hidden" Membuat input yang tidak terlihat oleh pengguna-->
 
                        <button type="submit"  class="btn btn-primary">Submit</button>
                      </form>

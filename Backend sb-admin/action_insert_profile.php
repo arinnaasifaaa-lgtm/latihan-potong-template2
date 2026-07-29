@@ -12,14 +12,14 @@ include "connection.php";
     $vphone = $_POST['phone'];
     $vemail = $_POST['email'];
     $vcity = $_POST['address'];
-    $vlinkedin = $_POST['linkedin'];
+    $vfind_me = $_POST['find_me'];
     $vnationality = $_POST['nationality'];
 
     // mysqli_query adalah perintah utk menyatukan koneksi database dg query tabel.
     // (nama,about,website,phone,email,city linkedin) adalah nama2 kolom database
     // ('$vnama', '$vabout', '$website','$phone','$email','$city','$linkedin','$nationality') adlh variabel di atas yg sudah kt bikin sblmnya.
-    $query = mysqli_query($koneksi, "INSERT INTO profile (nama, about, website, phone, email, address, linkedin, nationality)
-    VALUES ('$vnama', '$vabout', '$vwebsite', '$vphone', '$vemail', '$vcity', '$vlinkedin', '$vnationality')");
+    $query = mysqli_query($koneksi, "INSERT INTO profile (nama, about, website, phone, email, address, find_me, nationality)
+    VALUES ('$vnama', '$vabout', '$vwebsite', '$vphone', '$vemail', '$vcity', '$vfind_me', '$vnationality')");
 
     // header location utk memngarahkan ke halaman tabel_profile
        header("Location: tabel_profile.php");

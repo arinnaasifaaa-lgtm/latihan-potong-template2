@@ -88,6 +88,8 @@ $portfolio = mysqli_fetch_object($select_portfolio);
                             value="<?php echo $portfolio->jenis; ?>">
                         </div>
 
+                        <!-- Menyimpan ID familiar agar ikut terkirim saat tombol Update diklik -->
+                          <!-- type="hidden" Membuat input yang tidak terlihat oleh pengguna-->
                         <input type="hidden" name="id_portfolio" value="<?php echo $portfolio->id_portfolio; ?>">
 
                        <button type="submit"  class="btn btn-primary">Submit</button>

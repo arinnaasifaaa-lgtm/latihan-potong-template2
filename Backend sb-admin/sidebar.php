@@ -1,11 +1,11 @@
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+           <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+           <div class="sidebar-brand-icon">
+                    <img src="foto/arina.jpg" alt="Profile" width="50" height="50" class="rounded-circle">
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3"> Profile-CV <sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -14,7 +14,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                   <i class="fas fa-fw fa-home"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -23,7 +23,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+               Menu
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -95,69 +95,75 @@
                 <a class="nav-link" href="tabel_profile.php">
                     <!-- untuk mencari icon di sidebar dpt diambil
                      dari fontawesome.com -->
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-user"></i>
                     <span>Profile</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_skill.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-lightbulb"></i>
                     <span>Skill</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_education.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-graduation-cap"></i>
                     <span>Education</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_training.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-chalkboard-teacher"></i>
                     <span>Training</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_job.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-briefcase"></i>
                     <span>Profession</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_language.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-language"></i>
                     <span>Language</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_portfolio.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-images"></i>
                     <span>Portfolio</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_reference.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-address-book"></i>
                     <span>Reference</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_sidebar_photo.php">
-                    <i class="fas fa-fw fa-chart-folder"></i>
+                    <i class="fas fa-fw fa-image"></i>
                     <span>Sidebar Photo</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_mobile.php">
-                    <i class="fas fa-fw fa-chart-folder"></i>
+                    <i class="fas fa-fw fa-mobile-alt"></i>
                     <span>Mobile Icon</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_familiar.php">
-                    <i class="fas fa-fw fa-chart-folder"></i>
+                    <i class="fas fa-fw fa-icons"></i>
                     <span>Familiar Icon</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_tools.php">
-                    <i class="fas fa-fw fa-chart-folder"></i>
+                    <i class="fas fa-fw fa-tools"></i>
                     <span>Tools Icon</span></a>
             </li>
              <li class="nav-item">
                 <a class="nav-link" href="tabel_login.php">
-                    <i class="fas fa-fw fa-chart-folder"></i>
+                    <i class="fas fa-fw fa-sign-in-alt"></i>
                     <span>Login</span></a>
             </li>
+           <!--  <li class="nav-item">
+              <a class="nav-link" href="logout.php">
+                 <i class="fas fa-fw fa-sign-out-alt"></i>
+                 <span>Logout</span>
+              </a>
+            </li> -->
 
 
             <!-- Nav Item - Tables -->
@@ -177,9 +183,9 @@
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+               <!-- <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="..."> --
+                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p> -->
+                <a href="https://startbootstrap.com/theme/sb-admin-pro"></a>
             </div>
 
         </ul>

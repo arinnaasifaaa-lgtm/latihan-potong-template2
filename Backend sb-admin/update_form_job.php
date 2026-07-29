@@ -68,8 +68,10 @@ $job = mysqli_fetch_object($select_id);
                             <textarea name="deskripsi" id="deskripsi" cols="30" class="form-control" rows="10"><?php echo $job->deskripsi; ?></textarea>
                         </div>
                         
+                        <!-- Menyimpan ID familiar agar ikut terkirim saat tombol Update diklik -->
                         <input type="hidden" name="id_job" value="<?php echo $job->id_job; ?>" name="id_job">
 
+                         <!-- type="hidden" Membuat input yang tidak terlihat oleh pengguna-->
                        <button type="submit"  class="btn btn-primary">Submit</button>
                      </form>
                     <!-- content end -->

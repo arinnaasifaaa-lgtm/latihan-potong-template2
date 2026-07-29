@@ -40,7 +40,7 @@ $select_familiar = mysqli_query($koneksi, "SELECT*FROM familiar ORDER BY id_fami
 <!-- keempat, tambahkan tombol Tambah utk mengerahkan ke file form_profile.php -->
  <a href ="form_familiar.php" class="btn btn-info mb-2">ADD</a>
                     <!-- content start -->
-
+             <!-- Membuat tabel untuk menampilkan data language -->
              <table class="table table-striped">
                 <thead>
                     <tr>

@@ -68,6 +68,8 @@ $training = mysqli_fetch_object($select_id);
                             <textarea name="deskripsi" id="deskripsi" cols="30" class="form-control" rows="10"><?php echo $training->deskripsi; ?></textarea>
                         </div>
                         
+                        <!-- Menyimpan ID familiar agar ikut terkirim saat tombol Update diklik -->
+                        <!-- type="hidden" Membuat input yang tidak terlihat oleh pengguna-->
                         <input type="hidden" name="id_training" value="<?php echo $training->id_training; ?>">
                         
                        <button type="submit"  class="btn btn-primary">Submit</button>

@@ -66,6 +66,7 @@ $education = mysqli_fetch_object($select_id);
                         name="id_education">
 
                           <button type="submit" class="btn btn-primary">Submit</button>
+                          
                     </form>
 
                     <!-- content end -->

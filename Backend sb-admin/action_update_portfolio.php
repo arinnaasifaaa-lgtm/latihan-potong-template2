@@ -11,10 +11,13 @@ $vdeskripsi = $_POST['deskripsi'];
 $vtype = $_POST['jenis'];
 
 // utk menyimpan file foto yg nnti kta tmbahkan dr form_portfolio
+// Membuat nama file gambar secara otomatis menggunakan time()
 $namaimage = time() . ".jpg";
+// Menentukan folder tempat menyimpan gambar
 $path = "foto/";
 
-// update tanpa fot. yg mau di update adl keterangan sja selain foto.
+// update tanpa foto. yg mau di update adl keterangan sja selain foto.
+// if (empty($_FILES['img']['name'])){ untuk mengecek apakah pengguna memilih gambar baru saat mengupdate data.
 if (empty($_FILES['img']['name'])){
     $sql_update_portfolio_no_image = mysqli_query($koneksi, "UPDATE portfolio SET
     judul_portfolio='$vjudul', link='$vlink' , deskripsi='$vdeskripsi',
