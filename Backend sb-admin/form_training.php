@@ -40,7 +40,7 @@
                         <div class="mb-3">
                             <label for="belajar" class="form-label"> Year
                             </label>
-                            <input type="text" class="form-control" id="belajar" name="tahun_training">
+                            <input type="number" class="form-control" id="belajar" name="tahun_training">
                         </div>
                          <div class="mb-3">
                             <label for="tempat" class="form-label"> Place

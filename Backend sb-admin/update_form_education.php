@@ -49,7 +49,7 @@ $education = mysqli_fetch_object($select_id);
                         </div>
                         <div class="mb-3">
                             <label for="belajar" class="form-label"> Year </label>
-                            <input type="text" class="form-control" id="belajar" name="tahun_belajar"
+                            <input type="number" class="form-control" id="belajar" name="tahun_belajar"
                              value="<?php echo $education->tahun_belajar?>">
                         </div>
                         <div class="mb-3">

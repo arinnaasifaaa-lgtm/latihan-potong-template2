@@ -52,7 +52,7 @@ form_reference.php, dengan cara berulang yang sama-->
                         <div class="mb-3">
                             <label for="work" class="form-label"> Year
                             </label>
-                            <input type="text" class="form-control" id="text" name="tahun_bekerja">
+                            <input type="number" class="form-control" id="text" name="tahun_bekerja">
                         </div>
                          <div class="mb-3">
                             <label for="place" class="form-label"> Place
