@@ -43,16 +43,16 @@
                                     </div>
 
                                     <?php
-            if(isset($_GET['pesan'])){
-            if($_GET['pesan']=="logout"){
-                  echo "<div class='alert alert-success'>Berhasil logout.</div>";
-            }elseif($_GET['pesan']=="gagal"){
-                  echo "<div class='alert alert-danger'>Email atau Password salah.</div>";
-            }elseif($_GET['pesan']=="belum_login"){
-                  echo "<div class='alert alert-warning'>Silakan login terlebih dahulu.</div>";
-            }
-        }
-     ?>
+                                    if(isset($_GET['pesan'])){
+                                    if($_GET['pesan']=="logout"){
+                                       echo "<div class='alert alert-success'>Berhasil logout.</div>";
+                                    }elseif($_GET['pesan']=="gagal"){
+                                       echo "<div class='alert alert-danger'>Email atau Password salah.</div>";
+                                    }elseif($_GET['pesan']=="belum_login"){
+                                       echo "<div class='alert alert-warning'>Silakan login terlebih dahulu.</div>";
+                                      }
+                                    }
+                                   ?>
                                     <!-- untuk menjalankan button SUBMIT, 
                                      tambahkan property action="process_login.php" dan method post stlh form class
                                      user di bwh ini --> 

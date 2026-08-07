@@ -20,6 +20,7 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -27,39 +28,189 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
   <!-- link icon yg didapat dari devicon.dev --> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.15.1/devicon.min.css">
 
-  <!-- tooltip start -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" 
-    integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-
-    <style>
-      #hero:before {
-        content:"";
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
+  <style>
+    /* Supaya teks Hero bergeser ke kanan dan tidak tertutup sidebar di layar komputer */
+    @media (min-width: 1200px) {
+      .hero {
+        margin-left: 300px;
       }
-    </style>
+    }
+    #header::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hero {
+      position: relative;
+      width: auto;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .45);
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 70px;
+    }
+
+    .hero h2 {
+      color: #fff;
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #fff;
+      font-size: 28px;
+    }
+
+    /* Merapikan Foto Profile Sidebar */
+    .profile img {
+      width: 200px !important;
+      height: 200px !important;
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block;
+      margin: 15px auto;
+      border: 8px solid rgba(255, 255, 255, .15);
+    }
+
+   /* Menghilangkan bullet point list */
+.nav-menu ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* WARNA & LAYOUT DEFAULT (Teks & Ikon Redup) */
+.nav-menu a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important; /* Mencegah ikon & teks bertumpuk */
+  color: #a8b2d1;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a i {
+  position: static !important; /* Matikan posisi absolute bawaan template */
+  font-size: 20px !important;
+  color: #6c757d;
+  margin: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a span {
+  position: static !important;
+  color: #a8b2d1;
+  transition: all 0.3s ease;
+}
+
+/* WARNA MENYALA (Saat Active / Di-hover) */
+.nav-menu a.active,
+.nav-menu a.active span,
+.nav-menu a:hover,
+.nav-menu a:hover span {
+  color: #ffffff !important; /* Teks & Span jadi putih terang */
+  font-weight: 600;
+}
+
+.nav-menu a.active i,
+.nav-menu a:hover i {
+  color: #149ddd !important; /* Ikon jadi biru menyala */
+}
+    .portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 8px;
+  margin: 12px; /* <--- TAMBAHKAN INI (Sesuaikan angkanya, misal 10px - 15px) */
+}
+
+.portfolio .portfolio-wrap::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: calc(50% - 18px);
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  transition: all ease-in-out 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #fff;
+  font-size: 24px;
+  background: #149ddd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: 0.3s;
+  margin: 0 2px;
+  text-decoration: none;
+}
+.portfolio .portfolio-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  background: #37b3ed;
+}
+
+.portfolio .portfolio-wrap:hover::before,
+.portfolio .portfolio-wrap:hover .portfolio-links {
+  opacity: 1;
+}
+   
+  </style>
 </head>
-    
+
 <body>
   <?php
   include "../Backend sb-admin/connection.php";
@@ -70,72 +221,103 @@
 
   <!--- ==== Mobile nav toggle button === -->
   <i class="header-toggle bi bi-list d-xl-none"></i>
-   
+    
   <!-- ==== header ==== -->
-  <header id="header">
+ <header id="header" class="header dark-background">
     <div class="d-flex flex-column">
 
-    <div class="profile">
-      <!-- menampilkan data foto sidebAR START -->
-       <?php 
-       include "../Backend sb-admin/connection.php";
-       // FROM profile di bwh ini adl nama tabel di dlm database
-       $tampil_sidebar_photo = mysqli_query($koneksi, "SELECT * FROM sidebar_photo");
-       $sb = mysqli_fetch_object($tampil_sidebar_photo);
-       ?>
-       <!-- end -->
+      <div class="profile text-center">
+        <!-- menampilkan data foto sidebAR START -->
+        <?php
+        include "../Backend sb-admin/connection.php";
+        $tampil_sidebar_photo = mysqli_query($koneksi, "SELECT * FROM sidebar_photo");
+        $sb = mysqli_fetch_object($tampil_sidebar_photo);
+        ?>
+        <!-- end -->
 
-      <img src="../Backend sb-admin/foto/<?php echo $sb->sidebar_photo ?>" alt="" class="img-fluid rounded-circle">
-      <!-- <h1 class="text-light"><a href="index.html">Alex Smith</a><h1> --> 
-      <h1 class="text-light"><a href="index.php"><?php echo $p->nama ?></a></h1>
-    </div>
-
-    <div class="social-links mt-3 text-center">
-     <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a> --> 
-      <a href="<?php echo $p->linkedin ?>" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-    </div>
-    
-
-    <nav id="navbar" class="nav-menu navbar">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i>Home</a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> Overview</a></li>
-        <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-user"></i> Proficiency</a></li>
-        <li><a href="#education" class="nav-link scrollto"><i class="bx bx-file-blank"></i> Education</a></li>
-         <li><a href="#experience" class="nav-link scrollto"><i class="bx bx-file-blank"></i> Experience</a></li>
-        <li><a href="#portfolio"  class="nav-link scrollto"><i class="bx bx-book-content"></i> Portfolio</a></li>
-        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> Referees</a></li>
-       <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> contact</a></li> -->
-      </ul>
-    </nav><!-- .nav-menu -->
-  </div>
-  </header><!-- end header --> 
-
-    <!-- Hero Section -->
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-      <div class="hero-container" data-aos="fade-in">
-        <h2>Karina</h2>
-        <p>Saya<span class="typed" data-typed-items="bekerja keras, ramah, mudah bergaul, kreatif "></span></p>
+       <img src="../Backend sb-admin/foto/<?php echo $sb->sidebar_photo; ?>"
+             alt=""
+           style="width: 180px !important; height: 180px !important; object-fit: cover;"
+     class="img-fluid rounded-circle">
+        
+        <!-- Nama Profile (Di bawah foto, rata tengah, warna putih) -->
+        <h1 class="text-light text-center">
+          <a href="index.php" style="color: #ffffff !important; text-decoration: none;">
+            <?php echo $p->nama ?>
+          </a>
+        </h1>
       </div>
 
-    </section><!-- / end Hero Section -->
+      <div class="social-links mt-3 text-center">
+ <!-- <a href="<?php echo isset($p->twitter) ? $p->twitter : '#'; ?>" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a> --> 
+ <!-- <a href="<?php echo isset($p->facebook) ? $p->facebook : '#'; ?>" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a> --> 
+   <a href="https://www.instagram.com/_rinaariiinnn" class="instagram" target="_blank">
+    <i class="bx bxl-instagram"></i></a>
+  <!-- <a href="<?php echo isset($p->skype) ? $p->skype : '#'; ?>" class="skype" target="_blank"><i class="bi bi-skype"></i></a> -->
+ <!-- <a href=<"<!?php echo isset($p->linkedin) ? $p->linkedin : '#'; ?>" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a> -->
+</div>
+        
+      <nav id="navbar" class="nav-menu">
+  <ul>
+    <li><a href="#hero" class="nav-link scrollto active"><i class="bi bi-house"></i> <span>Home</span></a></li>
+    <li><a href="#about" class="nav-link scrollto"><i class="bi bi-person"></i> <span>Overview</span></a></li>
+    <li><a href="#skills" class="nav-link scrollto"><i class="bi bi-award"></i> <span>Proficiency</span></a></li>
+    <li><a href="#education" class="nav-link scrollto"><i class="bi bi-file-earmark-text"></i> <span>Education</span></a></li>
+    <li><a href="#experience" class="nav-link scrollto"><i class="bi bi-briefcase"></i> <span>Experience</span></a></li>
+    <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-images"></i> <span>Portfolio</span></a></li>
+    <li><a href="#services" class="nav-link scrollto"><i class="bi bi-people"></i> <span>References</span></a></li>
+  </ul>
+</nav>
+<!-- Letakkan script di sini -->
+    <script>
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(nav => nav.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      </script>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- end header --> 
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section dark-background">
+
+    <img src="../Backend sb-admin/foto/<?php echo $sb->sidebar_photo; ?>"
+         class="hero-bg"
+         alt="">
+
+    <div class="container" data-aos="fade-up">
+
+        <h2><?php echo $p->nama; ?></h2>
+
+        <p>
+            Saya
+            <span class="typed"
+                  data-typed-items="Bekerja Keras,Ramah,Mudah Bergaul,Kreatif">
+            </span>
+        </p>
+
+    </div>
+
+  </section><!-- / end Hero Section -->
 
       <main id="main">
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about section">
       <div class="container">
 
       <!-- Section Title -->
       <div class="section-title">
-        <h2>Overview</h2>
+        <h2>OVERVIEW</h2>
        <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. 
         Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
         Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --> 
-        <p style="text-align:justify;"><?php echo $p->about; ?></p> <br>
+        <p style="text-align:justify; font-size: 25px; line-height: 1.6;"><?php echo $p->about; ?></p> <br>
 
       </div><!-- End Section Title -->
 
@@ -143,9 +325,9 @@
           <div class="col-lg-4" data-aos="fade-right">
             <img src="../Backend sb-admin/foto/<?php echo $sb->sidebar_photo ?>" class="img-fluid" alt="" width="350">
           </div>
-          <div class="col-lg-8  pt-4 pt-lg-0 content" data-aos="fade-left">
+         <div class="col-lg-8 pt-0 pt-lg-0 content" data-aos="fade-left">
             <!-- <h2>UI/UX Designer &amp; Web Developer.</h2> -->
-             <div class="section-title">
+             <div class="section-title" style="padding-bottom: 10px; margin-bottom: 15px;">
 
               <h2> INFORMASI PRIBADI</h2>
              </div>
@@ -153,16 +335,21 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
             </p> --> 
-            <br>
             <div class="row">
               <div class="col-lg">
                 <ul>
                  <!--  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><?php echo $p->website ?></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><?php echo $p->phone ?></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Address:</strong> <span><?php echo $p->address ?></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email;</strong> <span><?php echo $p->email ?></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Nationality:</strong> <span><?php echo $p->nationality ?></span></li>
+                 <li class="d-flex align-items-start gap-2" style="font-size: 23px; margin-bottom: 25px;">
+  <i class="bi bi-chevron-right mt-1"></i> 
+  <strong class="text-nowrap">Website:</strong> 
+  <span class="text-break">
+    <a href="<?php echo $p->website ?>" target="_blank"><?php echo $p->website ?></a>
+  </span>
+</li>
+                  <li style="font-size: 23px; margin-bottom: 25px;"><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><?php echo $p->phone ?></span></li>
+                  <li style="font-size: 23px; margin-bottom: 25px; display: flex; align-items: flex-start; gap: 8px;"><i class="bi bi-chevron-right" style="margin-top: 4px;"></i> <strong style="white-space: nowrap;">Address:</strong> <span style="flex: 1;"><?php echo $p->address ?></span></li>
+                  <li style="font-size: 23px; margin-bottom: 25px;"><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><?php echo $p->email ?></span></li>
+                  <li style="font-size: 23px; margin-bottom: 25px;"><i class="bi bi-chevron-right"></i> <strong>Nationality:</strong> <span><?php echo $p->nationality ?></span></li>
                 </ul>
               </div>
 
@@ -232,13 +419,13 @@
     </section><!-- /End Facts Section -->
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section-bg">
+   <section id="skills" class="skills section" style="padding-top: 0 !important; margin-top: -115px !important;">
 
       <!-- Section Title -->
       <div class="container">
-      <div class="section-title mb-4" style="color: gray;">
-        <h2>Keterampilan IT </h2>
-        <h6 style="color: gray"> PROGRAMMING LANGUAGE & FRAMEWORKS </h6>
+      <div class="section-title" style="color: gray; padding-bottom: 10px; margin-bottom: 15px;">
+        <h2>KETERAMPILAN IT </h2>
+        <h6 style="color: gray; margin-top: 10px; margin-bottom: 0;"> PROGRAMMING LANGUAGE & FRAMEWORKS </h6>
           <h4 class="title"> </h4>
         <div class="description">
                                 <?php
@@ -247,7 +434,7 @@
                                 while ($m = mysqli_fetch_object($tampil_mobile)):
                                 ?>
            <!-- <i style="color: grey;font-size:35px" class="<?php echo $m->icon; ?> m-3></i> -->
-           <i style="font-size:35px" class="icon-with-tooltip <?php echo $m->icon; ?> colored m-3"
+           <i style="font-size:60px" class="icon-with-tooltip <?php echo $m->icon; ?> colored m-3"
            data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $m->nama ?>"></i>
           <?php endwhile; ?>
     </div>
@@ -261,7 +448,7 @@
                                 while ($m = mysqli_fetch_object($tampil_familiar)):
                                 ?>
            <!-- <i style="color: grey;font-size:35px" class="<?php echo $m->icon; ?> m-3></i> -->
-           <i style="font-size:35px" class="icon-with-tooltip <?php echo $m->icon; ?> colored m-3"
+           <i style="font-size:60px" class="icon-with-tooltip <?php echo $m->icon; ?> colored m-3"
            data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $m->nama ?>"></i>
            
            <!-- untuk memunculkan TOOLTIP per icon dibutuhkan JaaScript as below -->
@@ -274,7 +461,7 @@
     </div>
   </div>
     <div class="section-title mb-4" style="color: grey;">
-      <h6> TOOLS & PLATFORMS </h6>
+      <h6 style="color:gray"> TOOLS & PLATFORMS </h6>
 
         <h4 class="title"> </h4>
          <div class="description"> <?php 
@@ -283,7 +470,7 @@
                                 while ($m = mysqli_fetch_object($tampil_tools)):
                                 ?>
            <!-- <i style="color: grey;font-size:35px" class="<?php echo $m->icon; ?> m-3></i> -->
-           <i style="font-size:35px" class="icon-with-tooltip <?php echo $m->icon; ?> colored m-3"
+           <i style="font-size:60px" class="icon-with-tooltip <?php echo $m->icon; ?> colored m-3"
            data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $m->nama ?>"></i>
         
           <?php endwhile; ?>
@@ -291,7 +478,8 @@
     </div>
   </div>
     <div class="section-title mt-4">
-       <h6> LANGUAGE PROFICIENTY </h6>
+       <h2> LANGUAGE PROFICIENTY </h2>
+       
        <?php 
        // profile adl nama tabel di database
        $tampil_language = mysqli_query($koneksi, "SELECT * FROM language ORDER BY id_language DESC ");
@@ -299,12 +487,12 @@
        ?>
         <div class="row">
           <div class="col">
-            <h6 class="skill" style="color:grey"> 
+            <h6 class="skill" style="color:grey; font-size: 23px;"> 
              <?php echo $l->bahasa ?> </h6>
         </div>
         <div class="col">
 
-         <img src="../Backend sb-admin/fotobende/<?php echo $l->flag; ?>" alt="" class="val mb-3" width="40px">
+         <img src="../Backend sb-admin/fotobende/<?php echo $l->flag; ?>" alt="" class="val mb-3" width="100px">
      </div>
    </div>
 
@@ -329,7 +517,7 @@
           while ($s = mysqli_fetch_object($tampil_skill)):
           ?>
 
-           <span><?php echo $s->nama_skill ?></span> <br>
+           <span style="display: block; font-size: 25px; font-weight: 500; color: grey; margin-bottom: 12px;"><?php echo $s->nama_skill ?></span> <br>
           <?php endwhile; ?>
            <!-- perulangan end -->
            <!-- icon start -->
@@ -390,12 +578,12 @@
     </section><!-- / End Skills Section -->
 
     <!-- Resume Section -->
-   <section id="resume" class="resume">
+   <section id="resume" class="resume section">
   <div class="container">
 
     <!-- EDUCATION -->
     <div class="section-title">
-      <h2 id="education">Education</h2>
+      <h2 id="education">EDUCATION</h2>
     </div>
 
     <?php
@@ -408,13 +596,15 @@
       <div class="row">
 
         <div class="col-10">
-          <h4 style="color:grey;"><?php echo $e->nama_jurusan; ?></h4>
-          <p><em><?php echo $e->tempat_belajar; ?></em></p>
-          <p><?php echo $e->deskripsi; ?></p>
+          <h4 style="color:grey; font-size: 25px; font-weight: 700; margin-bottom: 15px; "><?php echo $e->nama_jurusan; ?></h4>
+          <p style="font-size: 25px; margin-bottom: 15px;"><em><?php echo $e->tempat_belajar; ?></em></p>
+          <p style="font-size: 20px; color: black; line-height: 1.6; margin-bottom: 15;">
+            <?php echo $e->deskripsi; ?>
+          </p>
         </div>
 
         <div class="col-2 text-end">
-          <h5 style="background:none;color:grey;">
+          <h5 style="background:none;color:grey; font-size: 20px; font-weight: 600; margin-bottom: 15;">
             <?php echo $e->tahun_belajar; ?>
           </h5>
         </div>
@@ -427,7 +617,7 @@
 
     <!-- TRAINING -->
     <div class="section-title mt-5">
-      <h2>Training</h2>
+      <h2>TRAINING</h2>
     </div>
 
     <?php
@@ -439,13 +629,13 @@
       <div class="row">
 
         <div class="col-10">
-          <h4 style="color:grey;"><?php echo $t->nama_training; ?></h4>
-          <p><em><?php echo $t->tempat_training; ?></em></p>
-          <p><?php echo $t->deskripsi; ?></p>
+          <h4 style="color:grey; font-size: 25px; font-weight: 700; margin-bottom: 15px; ""><?php echo $t->nama_training; ?></h4>
+          <p style="font-size: 25px; margin-bottom: 15px;"><em><?php echo $t->tempat_training; ?></em></p>
+          <p style="font-size: 20px; margin-bottom: 15px;"><?php echo $t->deskripsi; ?></p>
         </div>
 
         <div class="col-2 text-end">
-          <h5 style="background:none;color:grey;">
+          <h5 style="background:none;color:grey; font-size: 20px; font-weight: 600; margin-bottom: 15px;">
             <?php echo $t->tahun_training; ?>
           </h5>
         </div>
@@ -458,7 +648,7 @@
 
     <!-- EXPERIENCE -->
     <div class="section-title mt-5">
-      <h2 id="experience">Experience</h2>
+      <h2 id="experience">EXPERIENCE</h2>
     </div>
 
     <?php
@@ -467,12 +657,12 @@
     ?>
 
     <div class="resume-item">
-      <h4 style="color:grey;"><?php echo $j->nama_pekerjaan; ?></h4>
-      <h5 style="color:grey;"><?php echo $j->tahun_bekerja; ?></h5>
-      <p><em><?php echo $j->tempat_bekerja; ?></em></p>
+      <h4 style="color:grey; font-size: 25px; font-weight: 700; margin-bottom: 15px; "><?php echo $j->nama_pekerjaan; ?></h4>
+      <h5 style="color:grey; font-size: 20px; font-weight: 600; margin-bottom: 15px;"> <?php echo $j->tahun_bekerja; ?></h5>
+      <p style="font-size: 20px; margin-bottom: 15px;"><em><?php echo $j->tempat_bekerja; ?></em></p>
 
       <ul>
-        <li><?php echo $j->deskripsi; ?></li>
+        <li style="padding-left: 20px; font-size: 18px; color: #161414; line-height: 1.6;"><?php echo $j->deskripsi; ?></li>
       </ul>
     </div>
 
@@ -483,213 +673,215 @@
   <!-- /End Resume Section -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
+   <section id="portfolio" class="portfolio section">
+  <div class="container">
 
-      <!-- Section Title -->
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. 
-        Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
-      </div>
-          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-            <?php
-            include "../Backend sb-admin/connection.php";
-            // profile adl nama tabel di database
-            $tampil_portfolio = mysqli_query($koneksi, "SELECT * FROM portfolio ORDER BY id_portfolio DESC");
-            while ($pf = mysqli_fetch_object($tampil_portfolio)):
-            ?>
-             <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="width: 350px; object-fit:cover height: 25px;">
-              <div class="portfolio-wrap">
-                <img src="../Backend sb-admin/foto/<?php echo $pf->img ?>" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                  <a href="../Backend sb-admin/foto/<?php echo $pf->img ?>" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="<?php echo $pf->judul_portfolio ?>"><i class="bx bx-plus"></i></a>
-                 <a href="<?php echo trim($pf->link); ?>" target="_blank" rel="noopener noreferrer" title="More Details">
-                 <i class="bx bx-link"></i>
-                 </a>
-              </div> 
-             </div>
-            </div>
-            <?php endwhile; ?>
+    <!-- Section Title -->
+    <div class="section-title">
+      <h2>PORTFOLIO</h2>
+      <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. 
+      Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+      ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+    </div>
 
-            <?php
-            // profile adl nama tabel di database
-            $tampil_portfolio = mysqli_query($koneksi, "SELECT * FROM portfolio WHERE jenis = 'Web' ");
-            while ($pf = mysqli_fetch_object($tampil_portfolio)):
-            ?>
-             <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="width: 350px; object-fit:cover; height: 175px;">
-              <div class="portfolio-wrap">
-                <img src="../Backend sb-admin/foto/<?php echo $pf->img ?>" class="img-fluid" alt="">
-                <div class="portfolio-links">
-                <a href="../Backend sb-admin/foto/<?php echo $pf->img ?>" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="<?php echo $pf->judul_portfolio ?>"><i class="bx bx-plus"></i></a>
-                <a href="<?php echo $pf->link ?>" title="More Details"><i class="bx bx-link"></i></a>
-              </div> 
-             </div>
-            </div>
-            <?php endwhile; ?>
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+     <?php
+include "../Backend sb-admin/connection.php";
 
-           <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
+// profile adl nama tabel di database
+$tampil_portfolio = mysqli_query($koneksi, "SELECT * FROM portfolio ORDER BY id_portfolio DESC");
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
+// Variabel pendukung
+$total_data = mysqli_num_rows($tampil_portfolio); // Hitung total foto di database
+$no = 1;
+$limit = 6; // Jumlah foto yang mau ditampilkan di awal (bisa kamu ubah, misal jadi 3 atau 9)
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
+while ($pf = mysqli_fetch_object($tampil_portfolio)):
+  // Jika urutan foto sudah lebih dari limit, berikan class 'd-none portfolio-hidden' (disembunyikan)
+  $hiddenClass = ($no > $limit) ? 'd-none portfolio-hidden' : '';
+?>
+  <div class="col-lg-4 col-md-6 portfolio-item filter-web <?php echo $hiddenClass; ?>">
+    <div class="portfolio-wrap">
+      <img src="../Backend sb-admin/foto/<?php echo $pf->img ?>" class="img-fluid" alt="" style="width: 100%; height: 230px; object-fit: cover;">
+      <div class="portfolio-links">
+        <a href="../Backend sb-admin/foto/<?php echo $pf->img ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $pf->judul_portfolio ?>">
+          <i class="bx bx-plus"></i>
+        </a>
+        <a href="<?php echo trim($pf->link); ?>" target="_blank" rel="noopener noreferrer" title="More Details">
+          <i class="bx bx-link"></i>
+        </a>
+      </div> 
+    </div>
+  </div>
+<?php 
+  $no++;
+endwhile; 
+?>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
+<!-- Tombol "Lihat Selengkapnya" (Hanya tampil jika total foto melebihi limit) -->
+<?php if ($total_data > $limit): ?>
+  <div class="col-12 text-center mt-4">
+    <button id="btn-see-more" class="btn btn-primary px-4 py-2" style="border-radius: 20px;" onclick="togglePortfolio()">Lihat Selengkapnya</button>
+  </div>
+<?php endif; ?>
+      
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>
-
-          </div>-->
-
+      <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>App 1</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
         </div>
-
       </div>
 
-    </section><!-- /End Portfolio Section -->
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Product 1</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Branding 1</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Books 1</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>App 2</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Product 2</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Branding 2</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Books 2</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>App 3</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Product 3</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Branding 3</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+        <div class="portfolio-content h-100">
+          <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Books 3</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+
+  </div>
+</section><!-- /End Portfolio Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services section">
       <div class="container">
 
       <!-- Section Title -->
       <div class="section-title">
-        <h2>REFEREES</h2>
+        <h2>REFERENCES</h2>
         <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. 
         Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit 
         alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
@@ -703,10 +895,22 @@
             ?>
 
             <div class="icon-box" data-aos="fade-up">
-              <dix class="icon"><a href="tel:<?php echo $re->phone ?>" target="_blank"><i class="bi bi-telephone-fill"></i></a></div>
-              <!-- <h4 class="title"><a href="" ></a>lorensum</h4> -->
-              <h4 class="title"><?php echo $re->nama ?></h4>
-              <p class="description"><?php echo $re->perusahaan ?></h4>
+            <!-- 1. Ikon Telepon -->
+            <div class="icon">
+              <a href="tel:<?php echo $re->phone ?>" target="_blank">
+               <i class="bi bi-telephone-fill"></i>
+              </a>
+            </div>
+
+            <!-- 2. Nama Referensi (Besar & Tebal) -->
+            <h4 class="title" style="color: grey; font-size: 25px; font-weight: 700; margin-bottom: 15px;">
+               <?php echo $re->nama ?>
+            </h4>
+
+            <!-- 3. Perusahaan / Jabatan (Ukuran 18px & Rapi) -->
+            <p class="description" style="font-size: 20px; color: #555555; line-height: 1.5; margin-bottom: 15px;">
+               <?php echo $re->perusahaan ?>
+            </p>
             </div>
           <?php endwhile; ?>
            <!--
@@ -985,24 +1189,73 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+ <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      var tooltips = new bootstrap.Tooltip(document.querySelector('.icon-with-tooltip'));
-    })
-  </script>
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // --- TOOLTIP ---
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach(function (el) {
+        new bootstrap.Tooltip(el);
+    });
+
+    // --- DETEKSI MENU NYALA SAAT DI-SCROLL (SCROLLSPY) ---
+    const navLinks = document.querySelectorAll('#navbar .nav-link');
+    const sections = document.querySelectorAll('section');
+
+    function navbarlinksActive() {
+        let position = window.scrollY + 200; // Toleransi jarak dari atas
+        
+        sections.forEach(section => {
+            if (!section.getAttribute('id')) return;
+            
+            let sectionTop = section.offsetTop;
+            let sectionHeight = section.offsetHeight;
+
+            if (position >= sectionTop && position <= (sectionTop + sectionHeight)) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + section.getAttribute('id')) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Jalankan saat pertama kali dimuat & saat layar di-scroll
+    window.addEventListener('load', navbarlinksActive);
+    document.addEventListener('scroll', navbarlinksActive);
+});
+
+// --- FUNGSI LIHAT SELENGKAPNYA PORTFOLIO ---
+function togglePortfolio() {
+  const hiddenItems = document.querySelectorAll('.portfolio-hidden');
+  const btn = document.getElementById('btn-see-more');
+
+  hiddenItems.forEach(item => {
+    item.classList.toggle('d-none');
+  });
+
+  if (btn.innerText === "Lihat Selengkapnya") {
+    btn.innerText = "Tampilkan Lebih Sedikit";
+  } else {
+    btn.innerText = "Lihat Selengkapnya";
+  }
+}
+</script>
 
 </body>
 

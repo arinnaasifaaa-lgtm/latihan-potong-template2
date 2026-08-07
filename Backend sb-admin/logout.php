@@ -1,10 +1,13 @@
 <?php
 session_start();
 
-// Menghapus semua session
+// 1. Bersihkan semua isi variabel session
+$_SESSION = array();
+
+// 2. Hancurkan session dari server
 session_destroy();
 
-// Kembali ke halaman login dengan pesan logout
-header("Location:login.php?pesan=logout");
-
+// 3. Tendang balik ke halaman login
+header("Location: login.php?pesan=logout");
+exit(); // Wajib ditambahkan agar script langsung berhenti total
 ?>

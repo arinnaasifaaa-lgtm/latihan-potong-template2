@@ -1,5 +1,3 @@
-<?php include "header.php" ?>
-
 <?php
 session_start();
 
@@ -9,6 +7,7 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
 }
 ?>
 
+<?php include "header.php" ?>
 <body id="page-top">
 
 
@@ -41,7 +40,7 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
 
                     <!-- content start -->
 
-             <h1> SELAMAT DATANG </h1>
+             <h1> SELAMAT DATANG DI HALAMAN SAYA </h1>
 
                     <!-- content end -->
 

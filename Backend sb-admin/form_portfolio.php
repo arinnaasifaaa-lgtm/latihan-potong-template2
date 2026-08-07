@@ -8,6 +8,14 @@ form_language.php, form_portfolio, form_skill.php, form_education.php
 form_reference.php, dengan cara berulang yang sama--> 
 
 <?php include "header.php" ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
+    header("Location: login.php?pesan=belum_login");
+    exit();
+}
+?>
 
 <body id="page-top">
 

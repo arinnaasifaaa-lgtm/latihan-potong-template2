@@ -7,6 +7,14 @@ $select_tools = mysqli_query($koneksi, "SELECT*FROM tools");
 ?>
 
 <?php include "header.php" ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
+    header("Location: login.php?pesan=belum_login");
+    exit();
+}
+?>
 
 <body id="page-top">
 

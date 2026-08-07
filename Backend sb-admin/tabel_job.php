@@ -7,6 +7,14 @@ $select_job = mysqli_query($koneksi, "SELECT*FROM job ORDER BY id_job DESC");
 ?>
 
 <?php include "header.php" ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
+    header("Location: login.php?pesan=belum_login");
+    exit();
+}
+?>
 
 <body id="page-top">
 

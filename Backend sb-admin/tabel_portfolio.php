@@ -12,6 +12,14 @@ $select_portfolio = mysqli_query($koneksi, "SELECT * FROM portfolio ORDER BY id_
 ?>
 
 <?php include "header.php" ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
+    header("Location: login.php?pesan=belum_login");
+    exit();
+}
+?>
 
 <body id="page-top">
 
